@@ -15,12 +15,12 @@ public class FilmQueryApp {
 	public static void main(String[] args) {
 		FilmQueryApp app = new FilmQueryApp();
 //    app.test();
-		do {
+//		do {
 			app.launch();
-		
-		} while (app.anotherSearch());
-		System.out.println("Thanks for using YaallyWood film studio interface");
-		System.out.println("Have a nice day");
+
+//		} while (app.anotherSearch());
+//		System.out.println("Thanks for using YaallyWood film studio interface");
+//		System.out.println("Have a nice day");
 	}
 
 //	private void test() {
@@ -49,7 +49,7 @@ public class FilmQueryApp {
 			System.out.println(actorDisplay);
 			break;
 		case 3:
-			System.out.println("FInd Actors by Film ID, Enter Film ID: ");
+			System.out.println("Find Actors by Film ID, Enter Film ID: ");
 			choice = input.nextInt();
 			List<Actor> actors = db.findActorsByFilmId(choice);
 			for (Actor actor : actors) {
@@ -58,23 +58,22 @@ public class FilmQueryApp {
 			break;
 		case 4:
 			System.out.println("Please enter a keyword: ");
+			System.out.print("->>;");
 			input.nextLine();
 			String keyWord = input.nextLine();
 			List<Film> films = db.findFilmByKeyword(keyWord);
 			for (Film film : films) {
-				System.out.println(film);
-				break;
+			System.out.println(film);
+			break;
 			}
 		case 0:
 			System.out.println("Thanks for using YaallyWood film studio interface");
 			System.out.println("Have a nice day");
 			break;
 		default:
-			System.out.println("EXIT");
 			break;
 		}
 
-		input.close();
 	}
 
 	private void startUserInterface(Scanner input) {
@@ -89,21 +88,25 @@ public class FilmQueryApp {
 		System.out.println("** 3: Find Actors by Film ID?    **");
 		System.out.println("** 4: Find Film by keyword?      **");
 		System.out.println("**                               **");
-		System.out.println("** 0: Exit the app.              **");
+		System.out.println("** 0: EXIT                       **");
+		System.out.println("**                               **");
 		System.out.println("***********************************");
+		System.out.println("**Please enter an option:      ");
 	}
 
-	private boolean anotherSearch() {
-		Scanner input2 = new Scanner(System.in);
-		System.out.println("Would you like another film search?");
-		System.out.println("YES or NO");
-		String as = input2.next();
-
-		if (as.equalsIgnoreCase("y") || as.equalsIgnoreCase("yes")) {
-			return true;
-		}else {
-			return false;
-		}
-
-	}
+//	public boolean anotherSearch() {
+//		Scanner input2 = new Scanner(System.in);
+//		String anotherSearch;
+//		System.out.println();
+//		System.out.println("Would you like another film search?");
+//		System.out.println("YES or NO");
+//		System.out.println();
+//		anotherSearch= input2.next();
+//
+//		if (anotherSearch.equalsIgnoreCase("y") || anotherSearch.equalsIgnoreCase("yes")) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 }
