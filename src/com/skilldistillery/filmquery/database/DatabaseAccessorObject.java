@@ -30,7 +30,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 		try {
 			Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-			String sql = "SELECT id, title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, special_features FROM film where film.id = ?";
+			String sql = "SELECT * FROM film where film.id = ? ";
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, filmId);
@@ -56,7 +56,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 						replacementCost, rating, specialFeatures, language, actors, category);
 
 			}else {
-				System.out.println("Sorry " + filmId +" Could not be found");
+				System.out.println("Sorry " + filmId + " Could not be found");
 			}
 			
 			
@@ -64,7 +64,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			stmt.close();
 			rs.close();
 		} catch (SQLException e) {
-			System.out.println("The film id is not found");
+			System.err.println("ERROR");
 			e.printStackTrace();
 		}
 		return film;
@@ -188,7 +188,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			rs.close();
 
 		} catch (SQLException e) {
-			System.err.println("Error while finding film by keyword");
+			System.out.println("Sorry " + keyword +" Could not be found");
 			e.printStackTrace();
 		}
 		
