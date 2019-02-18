@@ -52,8 +52,6 @@ public class FilmQueryApp {
 			System.out.println("**                               **");
 			System.out.println("** 1: Find a film by ID?         **");
 			System.out.println("** 2: Find an Actor by ID?       **");
-			System.out.println("** 3: Find Actors by Film ID?    **");
-			System.out.println("** 4: Find Film by keyword?      **");
 			System.out.println("**                               **");
 			System.out.println("** 0: EXIT                       **");
 			System.out.println("**                               **");
@@ -154,43 +152,4 @@ public class FilmQueryApp {
 	}
 }
 
-//		int kb = input.nextInt();
-//		int choice;
-//		switch (kb) {
-//		case 1:
-//			System.out.println("Find Film by ID, Enter ID: ");
-//			choice = input.nextInt();
-//			Film filmDisplay = db.findFilmById(choice);
-//			System.out.println(filmDisplay);
-//			break;
-//		case 2:
-//			System.out.println("Find Actor by ID");
-//			choice = input.nextInt();
-//			Actor actorDisplay = db.findActorById(choice);
-//			System.out.println(actorDisplay);
-//			break;
-//		case 3:
-//			System.out.println("Find Actors by Film ID, Enter Film ID: ");
-//			choice = input.nextInt();
-//			List<Actor> actors = db.findActorsByFilmId(choice);
-//			for (Actor actor : actors) {
-//				System.out.println(actor);
-//			}
-//			break;
-//		case 4:
-//			System.out.println("Please enter a keyword: ");
-//			System.out.print("->>;");
-//			input.nextLine();
-//			String keyWord = input.nextLine();
-//			List<Film> films = db.findFilmByKeyword(keyWord);
-//			for (Film film : films) {
-//			System.out.println(film);
-//			break;
-//			}
-//		case 0:
-//			System.out.println("Thanks for using YaallyWood film studio interface");
-//			System.out.println("Have a nice day");
-//			break;
-//		default:
-//			break;
-//		}
+		
